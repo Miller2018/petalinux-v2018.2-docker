@@ -4,8 +4,8 @@ LABEL maintainer="ahe@xilinx.com"
 
 #ENV http_proxy=http://172.20.201.1:8080 https_proxy=http://172.20.201.1:8080
 #ENV http_proxy=http://proxy:8080 https_proxy=http://proxy:8080
-ENV HTTP_PROXY "http://proxy:8080"
-ENV HTTPS_PROXY "https://proxy:8080"
+#ENV HTTP_PROXY "http://proxy:8080"
+#ENV HTTPS_PROXY "https://proxy:8080"
 
 ARG version=2018.2
 ARG date_created=1110
@@ -41,7 +41,7 @@ RUN mkdir -p /proj/petalinux /tools/xgs/perl /proj/petalinux/$plnx_dir /proj/pet
 
 ADD plnx_installer.pl /proj/petalinux/$plnx_dir
 
-ADD default.env /tmp
+#ADD default.env /tmp
 
 RUN wget -O - http://cpanmin.us | perl - App::cpanminus
 
